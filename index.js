@@ -102,11 +102,39 @@ function displayTunes(tunes) {
 }
 // --------------------------------------------------------------------------------
 
+// -------------------------------ButtonAnimation-------------------------------
+function buttonAnimation(key) {
+  const activeButton = document.querySelector(`.drum[data-key="${key}"]`);
+  
+  if (activeButton) {
+    activeButton.classList.add('pressed');
+    
+    setTimeout(() => {
+      activeButton.classList.remove('pressed');
+    }, 100); // Animation duration
+  }
+}
 
+// ---------------------------------------------------------------------------
 
 
 // Play a recorded tune
 // --------------------------------this works---------------------------------------
+// function playTune(tune) {
+//   let i = 0;
+//   const interval = setInterval(() => {
+//     while (i < tune.length) {
+//       makeSound(tune[i]); // Call makeSound with the current character
+//       buttonAnimation(tune[i]);
+//       i++;
+//     } 
+//     clearInterval(interval); // Clear the interval when done
+    
+//   }, 500); // Adjust the interval as needed (500 ms between sounds)
+// }
+// ---------------------------------------------------------------------------------
+
+// Play a recorded tune by fetching from the API
 function playTune(tune) {
   let i = 0;
   const interval = setInterval(() => {
@@ -119,17 +147,15 @@ function playTune(tune) {
     }
   }, 500); // Adjust the interval as needed (500 ms between sounds)
 }
-// ---------------------------------------------------------------------------------
-
-// Play a recorded tune by fetching from the API
 
 
 
-// Add Save Tune button
-var saveButton = document.createElement("button");
-saveButton.innerHTML = "Save Tune";
-saveButton.addEventListener("click", saveTune);
-document.body.appendChild(saveButton);
+// Add Save Tune button -------------------------------------------------------------
+// var saveButton = document.createElement("button");
+// saveButton.innerHTML = "Save Tune";
+// saveButton.addEventListener("click", saveTune);
+// document.body.appendChild(saveButton);
+// ----------------------------------------------------------------------------------
 
 // Add a section to display and play saved tunes
 // var tunesList = document.createElement("div");

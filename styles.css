@@ -162,3 +162,10 @@ button:hover {
 #toggleTunesButton:hover {
   background-color: #1976d2;
 }
+
+.pressed {
+  /* Add animation styles here, e.g., */
+  transform: scale(0.9);
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
