@@ -72,17 +72,17 @@ function saveTune() {
 }
 
 // Fetch saved tunes from the backend
-function fetchTunes() {
-  fetch("http://localhost:3000/get-tunes")
-    .then(response => response.json())
-    .then(data => {
-      displayTunes(data);
-    })
-    .catch(error => {
-      console.error("Error fetching tunes:", error);
-      alert("Failed to fetch tunes.");
-    });
-}
+console.log("Fetching tunes..."); // To check if this is triggered
+fetch("http://localhost:3000/get-tunes")
+  .then(response => response.json())
+  .then(data => {
+    console.log("Fetched tunes:", data); // Log the fetched tunes
+    displayTunes(data);
+  })
+  .catch(error => {
+    console.error("Error fetching tunes:", error);
+    alert("Failed to fetch tunes.");
+  });
 
 // Display the tunes with Play button
 // ---------------------------------------This work------------------------------------
